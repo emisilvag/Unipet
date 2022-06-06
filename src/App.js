@@ -1,20 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
+import logo from "./fondo.jpg";
+import NavBar from "./components/NavBar";
+// import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Collares Unipet</h1>
+        <NavBar />
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Collares Unipet</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Contacto: collaresunipet@gmail.com</p>
       </header>
     </div>
   );
