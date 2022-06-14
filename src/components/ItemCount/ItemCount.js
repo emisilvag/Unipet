@@ -13,9 +13,13 @@ function ItemCount({ stock, initial }) {
 
   return (
     <div>
-      <button onClick={resta}>-</button>
+      <button disabled={cant <= 1} onClick={resta}>
+        -
+      </button>
       <span>{cant}</span>
-      <button onClick={suma}>+</button>
+      <button disabled={cant >= stock} onClick={suma}>
+        +
+      </button>
       <br />
       <button>Agregar al carrito</button>
     </div>
