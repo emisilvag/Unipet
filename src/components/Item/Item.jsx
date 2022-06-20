@@ -5,6 +5,7 @@ const Item = ({ info }) => {
     <a href="">
       <img src={info.image} />
       <p>{info.article}</p>
+      <p>{info.precio}</p>
     </a>
   );
 };
