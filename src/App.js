@@ -13,7 +13,6 @@ function App() {
         <BrowserRouter>
           <h1>Collares Unipet</h1>
           <NavBar />
-          {/* <Cart /> */}
           <img src={logo} className="App-logo" alt="logo" />
           <p>Contacto: collaresunipet@gmail.com</p>
           <Routes>
@@ -27,8 +26,6 @@ function App() {
               path="/detalle/:detalleId"
               element={<ItemDetailContainer />}
             />
-            {/* <ItemListContainer greeting="Bienvenido" /> */}
-            {/* <ItemDetailContainer greeting="Detalle del prodecto" /> */}
           </Routes>
         </BrowserRouter>
       </>

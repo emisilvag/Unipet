@@ -24,9 +24,6 @@ export const NavBar = () => {
               <CartWidget />
             </NavLink>
           </li>
-          {/* <li>Collares S</li> */}
-          {/* <li>Collares M</li> */}
-          {/* <li>Collares G</li> */}
         </ul>
       </nav>
     </div>
