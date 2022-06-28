@@ -1,4 +1,3 @@
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
@@ -62,7 +61,7 @@ export default function ItemListContainer({ greeting }) {
   return (
     <div>
       <h1>{greeting}</h1>
-      <ItemCount stock={5} initial={1} />
+
       <ItemList data={data} />
     </div>
   );
