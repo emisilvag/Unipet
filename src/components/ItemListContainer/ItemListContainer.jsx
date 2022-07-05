@@ -8,7 +8,7 @@ const collares = [
     image:
       "https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/GPS_mascotas_02_1580822277.jpg",
     article: "Collar Unipet P",
-    precio: "UYU $2000",
+    precio: 2000,
     category: "p",
   },
   {
@@ -16,7 +16,7 @@ const collares = [
     image:
       "https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/GPS_mascotas_02_1580822277.jpg",
     article: "Collar Unipet S",
-    precio: "UYU $2500",
+    precio: 2500,
     category: "s",
   },
   {
@@ -24,7 +24,7 @@ const collares = [
     image:
       "https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/GPS_mascotas_02_1580822277.jpg",
     article: "Collar Unipet M",
-    precio: "UYU $3000",
+    precio: 3000,
     category: "m",
   },
   {
@@ -32,7 +32,7 @@ const collares = [
     image:
       "https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/GPS_mascotas_02_1580822277.jpg",
     article: "Collar Unipet G",
-    precio: "UYU $3500",
+    precio: 3500,
     category: "g",
   },
 ];
