@@ -1,41 +1,13 @@
 import ItemList from "../ItemList/ItemList";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-
-const collares = [
-  {
-    id: 1,
-    image:
-      "https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/GPS_mascotas_02_1580822277.jpg",
-    article: "Collar Unipet P",
-    precio: 2000,
-    category: "p",
-  },
-  {
-    id: 2,
-    image:
-      "https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/GPS_mascotas_02_1580822277.jpg",
-    article: "Collar Unipet S",
-    precio: 2500,
-    category: "s",
-  },
-  {
-    id: 3,
-    image:
-      "https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/GPS_mascotas_02_1580822277.jpg",
-    article: "Collar Unipet M",
-    precio: 3000,
-    category: "m",
-  },
-  {
-    id: 4,
-    image:
-      "https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/GPS_mascotas_02_1580822277.jpg",
-    article: "Collar Unipet G",
-    precio: 3500,
-    category: "g",
-  },
-];
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 
 export default function ItemListContainer({ greeting }) {
   const [data, setData] = useState([]);
@@ -43,18 +15,24 @@ export default function ItemListContainer({ greeting }) {
   const { categoriaId } = useParams();
 
   useEffect(() => {
-    const getData = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(collares);
-      }, 2000);
-    });
-
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "collares");
     if (categoriaId) {
-      getData.then((res) =>
-        setData(res.filter((collares) => collares.category === categoriaId))
+      const queryFilter = query(
+        queryCollection,
+        where("category", "==", categoriaId)
+      );
+      getDocs(queryFilter).then((res) =>
+        setData(
+          res.docs.map((collares) => ({ id: collares.id, ...collares.data() }))
+        )
       );
     } else {
-      getData.then((res) => setData(res));
+      getDocs(queryCollection).then((res) =>
+        setData(
+          res.docs.map((collares) => ({ id: collares.id, ...collares.data() }))
+        )
+      );
     }
   }, [categoriaId]);
 
